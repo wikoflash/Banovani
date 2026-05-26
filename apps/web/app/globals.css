@@ -1,0 +1,94 @@
+/* ── Google Fonts ─────────────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
+
+@import "tailwindcss";
+
+/* ── Design tokens ────────────────────────────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-background:     #FAF7F2;
+  --color-surface:        #FFFFFF;
+  --color-primary-text:   #1F1F1F;
+  --color-secondary-text: #6F6A64;
+  --color-accent-beige:   #D8C3A5;
+  --color-accent-rose:    #E8C7C8;
+  --color-deep-brown:     #2B2420;
+  --color-border:         #E8E1D8;
+  --color-success:        #2F7D4F;
+  --color-error:          #B42318;
+
+  /* Semantic aliases for shadcn/ui compatibility */
+  --color-background:     #FAF7F2;
+  --color-foreground:     #1F1F1F;
+  --color-card:           #FFFFFF;
+  --color-card-foreground: #1F1F1F;
+  --color-popover:        #FFFFFF;
+  --color-popover-foreground: #1F1F1F;
+  --color-primary:        #2B2420;
+  --color-primary-foreground: #FAF7F2;
+  --color-secondary:      #FAF7F2;
+  --color-secondary-foreground: #1F1F1F;
+  --color-muted:          #F0EBE3;
+  --color-muted-foreground: #6F6A64;
+  --color-accent:         #D8C3A5;
+  --color-accent-foreground: #1F1F1F;
+  --color-destructive:    #B42318;
+  --color-destructive-foreground: #FFFFFF;
+  --color-border:         #E8E1D8;
+  --color-input:          #E8E1D8;
+  --color-ring:           #D8C3A5;
+
+  /* Typography */
+  --font-sans:   "Inter", "Noto Sans Georgian", ui-sans-serif, system-ui, sans-serif;
+  --font-serif:  "Cormorant Garamond", "Noto Serif Georgian", ui-serif, Georgia, serif;
+  --font-mono:   ui-monospace, "Cascadia Code", monospace;
+
+  /* Border radius */
+  --radius: 0.5rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Shadows */
+  --shadow-sm:  0 1px 2px 0 rgb(43 36 32 / 0.05);
+  --shadow-md:  0 4px 6px -1px rgb(43 36 32 / 0.07), 0 2px 4px -2px rgb(43 36 32 / 0.05);
+  --shadow-lg:  0 10px 15px -3px rgb(43 36 32 / 0.08), 0 4px 6px -4px rgb(43 36 32 / 0.05);
+  --shadow-xl:  0 20px 25px -5px rgb(43 36 32 / 0.08), 0 8px 10px -6px rgb(43 36 32 / 0.05);
+}
+
+/* ── Base styles ──────────────────────────────────────────────────────────── */
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography ───────────────────────────────────────────────────────────── */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+/* Brand heading — editorial serif */
+.font-brand {
+  font-family: var(--font-serif);
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background-color: var(--color-accent-beige); border-radius: 3px; }
+
+/* ── Focus styles ─────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent-beige);
+  outline-offset: 2px;
+}
+

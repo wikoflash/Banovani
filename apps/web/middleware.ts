@@ -30,12 +30,10 @@ export async function middleware(request: NextRequest) {
       }
     );
 
-    // Refresh the session (important — do not remove)
     const {
       data: { user },
     } = await supabase.auth.getUser();
 
-    // Protect all /admin/* routes except /admin/login
     const isAdminRoute = request.nextUrl.pathname.startsWith('/admin');
     const isLoginRoute = request.nextUrl.pathname === '/admin/login';
 
@@ -45,7 +43,6 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(loginUrl);
     }
 
-    // Redirect authenticated admin away from login page
     if (isLoginRoute && user) {
       const dashboardUrl = request.nextUrl.clone();
       dashboardUrl.pathname = '/admin/dashboard';
@@ -59,9 +56,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    '/admin/:path*',
-    // Exclude Next.js internals and static files
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
-  ],
+  matcher: ['/admin/:path*'],
 };

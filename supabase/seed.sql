@@ -19,7 +19,7 @@ insert into settings (key, value) values
   ('delivery_fee_regional',         '10'),
   ('free_delivery_threshold',       '150'),
   ('low_stock_threshold',           '3'),
-  ('instagram_url',                 '"https://instagram.com/banovani"'),
+  ('instagram_url',                 '"https://www.instagram.com/banovaniofficial/"'),
   ('whatsapp_url',                  '"https://wa.me/995000000000"'),
   ('whatsapp_number',               '"+995000000000"'),
   ('contact_email',                 '"hello@banovani.ge"'),

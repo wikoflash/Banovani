@@ -49,9 +49,12 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(dashboardUrl);
     }
 
+    supabaseResponse.headers.set('x-pathname', request.nextUrl.pathname);
     return supabaseResponse;
   } catch {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    response.headers.set('x-pathname', request.nextUrl.pathname);
+    return response;
   }
 }
 

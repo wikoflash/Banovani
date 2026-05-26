@@ -2,9 +2,6 @@
 -- Banovani E-Commerce — all core tables
 -- Run this in your Supabase SQL editor or via: supabase db push
 
--- ─── Extensions ───────────────────────────────────────────────────────────────
-create extension if not exists "pgcrypto";
-
 -- ─── Updated_at trigger helper ────────────────────────────────────────────────
 create or replace function handle_updated_at()
 returns trigger
